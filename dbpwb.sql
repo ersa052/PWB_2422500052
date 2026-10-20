@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 19, 2026 at 02:48 PM
+-- Generation Time: Oct 20, 2026 at 01:28 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
@@ -82,9 +82,12 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama`, `deskripsi`, `categori_id`, `harga`, `stok`) VALUES
-(8, 'Kemeja Formal', 'Kemeja formal untuk kerja kantoran dengan bahan caton', 4, 200000, 10),
-(11, 'Atasan Formal', 'Blouse pita butteryelow', 2, 180000, 10),
-(12, 'Blouse', 'Blouse kerja formal', 5, 180000, 10);
+(8, 'Kemeja Flanel Garis', 'Kemeja flanel motif kotak dengan bahan tebal dan hangat, cocok untuk gaya kasual harian.', 4, 200000, 10),
+(11, 'Blouse Pita', 'Blouse pita warna butter yellow , bahan lembut dan tidak gerah.', 5, 180000, 14),
+(12, 'Kemeja Blue Casual', 'Kemeja warna biru dengan model kasual, cocok untuk jalan santai maupun hangout.', 4, 180000, 8),
+(14, 'Blouse Kerja Formal', 'Blouse formal untuk kerja dengan potongan rapi dan bahan jatuh, cocok untuk ke kantor.', 5, 1000, 2),
+(15, 'Dress Anak Perempuan', 'Dress pendek untuk anak perempuan', 2, 1000, 2),
+(16, 'Kucoba', 'Coba Pilihan Kemeja', 4, 2000, 20);
 
 -- --------------------------------------------------------
 
@@ -105,7 +108,11 @@ CREATE TABLE `produk_gambar` (
 INSERT INTO `produk_gambar` (`id_gambar`, `nama_gambar`, `produk_id`) VALUES
 (11, 'produk-8-0.jpg', 8),
 (12, 'produk-11-0.jpg', 11),
-(13, 'produk-12-0.jpg', 12);
+(13, 'produk-12-0.jpg', 12),
+(18, 'produk-16-0.jpg', 16),
+(19, 'produk-16-01.jpg', 16),
+(21, 'produk-14-0.jpg', 14),
+(23, 'produk-15-0.jpg', 15);
 
 --
 -- Indexes for dumped tables
@@ -127,16 +134,13 @@ ALTER TABLE `kategori`
 -- Indexes for table `produk`
 --
 ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`),
-  ADD UNIQUE KEY `categori_id_2` (`categori_id`),
-  ADD KEY `categori_id` (`categori_id`);
+  ADD PRIMARY KEY (`id_produk`);
 
 --
 -- Indexes for table `produk_gambar`
 --
 ALTER TABLE `produk_gambar`
-  ADD PRIMARY KEY (`id_gambar`),
-  ADD UNIQUE KEY `produk_id` (`produk_id`);
+  ADD PRIMARY KEY (`id_gambar`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -158,13 +162,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_produk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `produk_gambar`
 --
 ALTER TABLE `produk_gambar`
-  MODIFY `id_gambar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_gambar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
